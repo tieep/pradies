@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="./css/QLSP.css">
+</head>
+<body> 
+    
+    <div id="header">
+        <div class="headerName">
+            <div>Manager</div>
+        </div>
+        <div class="user">
+            admin
+        </div>
+    </div>
+<!-- --------------------------------behind------------------------------------------- -->
+    <div id="behind">
+        <div id="menu">
+            <br>
+            <div class="menuchild" ><a href="./index.html">Trang chủ</a></div>
+            <div class="menuchild child1"  onclick="renderListBills()"><a href="#">Quản lý hóa đơn</a></div>
+            <div class="menuchild child2"  onclick="renderListUser()"><a href="#">Quản lý người dùng</a></div>
+            <div class="menuchild child3"  onclick="renderListProduct()"><a href="#">Quản lý sản phẩm</a></div>
+        </div>
+<!-- bill -->
+        <div id="content">
+            <div id="bill_Manager">
+                <div class="Manager_Header">Danh sách quản lý hóa đơn</div>
+                <div class="reportBill">
+                    <h1>Thống kê đơn hàng</h1>
+                    <h3 id="report1"></h3>
+                    <h3 id="report2"></h3>
+                    <h3 id="report3"></h3>
+                </div>
+                <br><br><br><br><br><br><br>
+                <div id="list_Bills">
+                    <table id="bill_Table">
+                        <!-- Table header here -->
+                    </table>
+                </div>
+                <br>
+                
+            </div>
+<!-- user -->
+            <div id="user_Manager">
+                <div class="Manager_Header">Danh sách quản lý người dùng</div>
+                <button class="user_Manager_Add">+ Thêm mới</button>
+                <br><br><br>
+                <input type="text" class="find_1" id="searchUser" placeholder="Search user by ID..." oninput="searchUserId()" style="height:40px; width: 25%; margin-left: 1%;">
+                <br><br>
+                <div id="list_Users">
+                    <table id="list_User">
+                    </table>
+                </div>
+            </div>
+            <form id="usaddform">
+                <div class="usaddformheader">
+                    <div class="usaddformheader1">FORM USER</div>
+                    <div class="closeUser">x</div>
+                </div>
+                <div class="usaddformbehind">
+                    <div class="bao">
+                        <lable class="bao1">ID:</lable>
+                        <input id="idUser" class="bao2" type="text" placeholder="ID">
+                    </div>
+                    <div class="bao">
+                        <lable class="bao1">NAME:</lable>
+                        <input id="nameUser" class="bao2" type="text" placeholder="NAME">
+                    </div>
+                    <div class="bao">
+                        <lable class="bao1">EMAIL:</lable>
+                        <input id="email" class="bao2" type="text" placeholder="EMAIL">
+                    </div>
+                    <div class="bao">
+                        <lable class="bao1">PASSWORD:</lable>
+                        <input id="password" class="bao2" type="text" placeholder="PASSWORD">
+                    </div>
+                    <div class="bao">
+                        <label class="bao1">STATUS:</label>
+                        <select id ="isadmin" class="bao2">
+                            <option value="user">User</option>
+                            <!-- <option value="admin">Admin</option> -->
+                        </select>
+                    </div>
+
+                    <!-- này là nút hidden -->
+                    <div class="bao"><input id="index1" type="hidden"></div>
+
+                </div>
+                <button class="pmaddformfooter" id="saveuser" onclick="saveUser()">Thêm ngay</button> 
+                <button class="pmaddformfooter" id="updateuser" onclick="changeUser()" style="display:none" >Cập nhật</button>
+            </form>
+<!-- product -->
+            <div id="product_Manager">
+                <div class="Manager_Header">Danh sách quản lý sản phẩm</div>
+                <button class="product_Manager_Add">+ Thêm mới</button>
+                <br><br><br>
+                <input type="text" class="find_1" id="search" placeholder="Search product by Name..." oninput="searchProductId()" style="height:40px; width: 25%; margin-left: 1%;">
+                <br>
+                <br>
+                <div id="list_Productss">
+                    <table id="list_Products">
+                    </table>
+                </div>
+            </div>
+            <form id="pmaddform">
+                <div class="pmaddformheaader">
+                    <div class="pmaddformheaader1">FORM PRODUCT</div>
+                    <div class="close">x</div>
+                </div>
+                <div class="pmaddformbehind">
+                    <div class="bao">
+                        <lable class="bao1">ID:</lable>
+                        <input id="id" class="bao2" type="text" placeholder="ID">
+                    </div>
+                    <div class="bao">
+                        <lable class="bao1">NAME:</lable>
+                        <input id="name" class="bao2" type="text" placeholder="NAME">
+                    </div>
+                    <div class="bao">
+                        <lable class="bao1">PRICE:</lable>
+                        <input id="price" class="bao2" type="text" placeholder="PRICE">
+                    </div>
+                    <div class="bao">
+                        <lable class="bao1">TAG:</lable>
+                        <input id="tag" class="bao2" type="text" placeholder="TAG">
+                    </div>
+                    <div class="bao">
+                        <lable class="bao1">QUANTITY:</lable>
+                        <input id="quantity" class="bao2" type="text" placeholder="QUANTITY">
+                    </div>
+                    <div class="bao">
+                        <lable class="bao1">BRAND:</lable>
+                        <input id="brand" class="bao2" type="text" placeholder="BRAND">
+                    </div>
+                    <div class="bao">
+                        <lable class="bao1">SIZE:</lable>
+                        <input id="size" class="bao2" type="text" placeholder="SIZE">
+                    </div>
+                    <div class="bao">  
+                        <lable class="bao1">IMAGE:</lable>
+                        <input id="img" class="tep" type="file">
+                        <div id="imgtmp"></div>
+                    </div>
+
+                    <!-- này là nút hidden -->
+                    <div class="bao"><input id="index" type="hidden"></div>
+
+                </div>
+                <button class="pmaddformfooter" id="saveProduct" onclick="save()">Thêm ngay</button> 
+                <button class="pmaddformfooter" id="updateProduct" onclick="changeProduct()" style="display:none" >Cập nhật</button>
+                
+            </form>
+        </div>
+    </div>
+<!-- --------------------------------footer------------------------------------------- -->
+    <div id="footer"></div>
+    <script src="./javascript/QLSP.js"></script>
+    <link rel="stylesheet" href="./css/QLSP1.css">
+</body>
+</html>

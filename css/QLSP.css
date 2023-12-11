@@ -1,0 +1,242 @@
+* {
+    padding:0;
+    margin:0;
+}
+#header {
+    background-color: #680000;
+    color:aliceblue;
+    position:relative;
+    height:50px;
+    position:relative;
+}
+.headerName {
+    font-size: 40px;
+    float:left;
+    margin-left: 20px;
+}
+.user {
+    font-size: 25px;
+    position:absolute;
+    right:5%;
+    bottom:5%;
+    color:yellow;
+}
+
+/* -------------behind---------------- */
+#behind {
+    display:flex;
+    min-height:650px;
+}
+
+#menu {
+    flex:0 0 15%;
+    background-color:rgb(43, 40, 40);
+}
+.menuchild {
+    overflow:hidden;
+    width: 100%;
+    line-height: 40px;   
+}
+.menuchild a {
+    text-decoration: none;
+    color:white;
+    display:block;
+    padding-left:20px;
+}
+.menuchild a:hover {
+    background-color: bisque;
+    color:black;
+}
+/* ---------content-------- */
+#content {
+    flex: 0 0 85%;
+    background-color:rgb(214, 206, 206);
+}
+.Manager_Header {
+    font-size: 30px;
+    float:left;
+    margin: 5px 10px;
+}
+.find {
+    max-width: 300px;
+    margin-left: 10px;
+    display:flex;
+}
+.find_1 {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.find_2 {
+    padding: 0 20px;
+    background-color: #419dd6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+                            /* bill */
+#bill_Manager {
+    width: 98%;
+    min-height: 600px;
+    margin-left: 1%;
+    margin-top: 15px;
+    background-color: white;
+    display:none;
+    position: relative;
+}
+                            /* user */
+#user_Manager {
+    width: 98%;
+    min-height: 600px;
+    margin-left: 1%;
+    margin-top: 15px;
+    background-color: white;
+    position:relative;
+    display:none; 
+}
+.user_Manager_Add {
+    font-size: 15px;
+    color: white;
+    background-color: rgb(17, 195, 17);
+    float:right;
+    margin: 10px 10px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+                            /* product */
+#product_Manager {
+    width: 98%;
+    min-height: 600px;
+    margin-left: 1%;
+    margin-top: 15px;
+    background-color: white;
+    display:none;
+}
+
+.product_Manager_Add {
+    font-size: 15px;
+    color: white;
+    background-color: rgb(17, 195, 17);
+    float:right;
+    margin: 10px 10px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+                    /* form */
+#pmaddform {
+    margin:25%; 
+    top: -250px;
+    position:absolute;
+    z-index: 2;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    width:40%;
+    height:550px;
+    display:none;
+}
+.pmaddformheaader {
+    background-color: #680000;
+    height:50px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    
+}
+.pmaddformheaader1 {
+    color:white;
+    float:left;
+    font-size: 30px;
+    width:93%;
+    text-align: center;
+    padding-top:10px;
+}
+.close {
+    padding-top:10px;
+    margin-left:5px;
+    float:left;
+    color: white;
+    font-size: 30px;
+    cursor:pointer;
+}
+.bao {
+    height:30px;
+    display:flex;
+    margin:5px;
+    padding:10px;
+}
+.bao .bao1 {
+    flex:0 0 30%;
+    background-color: #680000;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-right: 2px;
+}
+.bao .bao2 {
+    border: solid 1px black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    flex:0 0 60%;
+    padding:5px;
+}
+.pmaddformbehind .bao .tep {
+    margin-left: 20px;
+}
+
+.pmaddformfooter {
+    background-color: #680000;
+    color:white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left:43%;
+    /* margin-top: -50px; */
+}
+
+
+/* USER */
+#usaddform {
+    margin:25%; 
+    top: -250px;
+    position:absolute;
+    z-index: 2;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    width:40%;
+    height:450px;
+    display:none;
+}
+.usaddformheader {
+    background-color: #680000;
+    height:50px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    
+}
+.usaddformheader1 {
+    color:white;
+    float:left;
+    font-size: 30px;
+    width:93%;
+    text-align: center;
+    padding-top:10px;
+}
+.closeUser {
+    padding-top:10px;
+    margin-left:5px;
+    float:left;
+    color: white;
+    font-size: 30px;
+    cursor:pointer;
+}

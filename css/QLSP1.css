@@ -1,0 +1,48 @@
+table {
+    width:100%;
+    height:50px;
+    text-align: center;
+    
+}
+th {
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+td {
+    background-color: rgb(182, 178, 178);
+    padding: 10px;
+}
+table button {
+    color: white;
+    background-color: cornflowerblue;
+    padding:5px;
+    border-radius: 10px;
+}
+.idshow {
+    width:10%;
+}
+.nameshow {
+    width:30%;
+}
+.priceshow {
+    width:20%;
+}
+.imgshow {
+    width:20%;
+
+}
+.actionshow {
+    width:20%;
+}
+
+
+.reportBill {
+    position:absolute;
+    margin-top: 5px;
+    border: solid 1px black;
+    width:30%;
+    margin-left: 35%;
+    background-color: burlywood;
+    top: 10px;
+    right: 5px;
+}

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">\
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="./QLSP.html">
+    <title>Sports Paradise</title>
+</head>
+
+    
+    <div class="main" id="main">
+        <div class="header">
+            <div id="mobile-menu" class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <img src="./image/logo.png" alt="logo" class="logo">
+            <form class="search">
+                <input class="searchbar" type="search" placeholder="Tìm kiếm......" >
+                <button class="buttonSearch"><i class="fas fa-search" style="color: #680000;"></i></button>
+            </form>
+            <header>
+                <div class="user-info">
+                    <p class="username">
+                    </p>
+                </div>
+                <button id="btnLogin-popup">Login</button>
+                <button id="btn-logout">Log Out</button>
+            </header>
+            <div id="popup-wrapper">
+                <div class="popup-content">
+               </div>     
+            </div>
+        </div>
+        <div class="content" >
+            <div class="topmenu" >
+                <nav class="navbar">          
+                    <div class="containermenu" >
+                        <div class="menu-item" id="navbarNavDropdown"> 
+                            <ul class="navbar-nav" >
+                                <li class="nav-item" id="homePage">
+                                    <a class="nav-link active"
+                                        aria-current="page" href="index.html">
+                                        <i class="fas fa-home" ></i>
+                                        HOME
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="man">
+                                    <a class="nav-link" onclick="changePagetoPage('all')" href="#">
+                                        ALL PRODUCTS
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="shirt">
+                                    <a class="nav-link"  onclick="changePagetoPage('shirt')" href="#">
+                                        T-SHIRTS
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="pant">
+                                    <a class="nav-link" onclick="changePagetoPage('pants')"  href="#">
+                                        PANTS
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active"onclick="changetocart();">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        CART                                 
+                                    </a>
+                                </li>
+                                
+                                <li class="nav-item" id="mobile-DN"><a class="nav-link" href="#">LOG IN</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <button onclick="topFunction()" id="TopBtn" title="Go to top">TOP</button>
+            <!-----------------------------------change từ khúc này-------------->
+            <div class="page" id="homePage1">
+                <div class="banner1">
+                    <img src="./image/banner1.jpg" alt="banner" class="banner1">
+                </div>
+                 <div class="productDetail" id="product_detail1">
+                <div class="row">
+                    <div class="col-2" id="image1" class="image_product">
+                    </div>
+                    <div class="col-2">
+                        <div class="info">
+                            <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                            <div id="productInfo1"></div>
+                            <b>Description: </b>
+                            <p class="Description"> 
+                                Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                            </p>
+                            <b>Size : </b>
+                            <div>
+                                <select id="size">
+                                    <option>XS</option>
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option selected>L</option>
+                                    <option>XL</option>
+                                    <option>XXL</option>
+                                </select>
+                            </div>
+                            <div class="addCart" style="cursor: pointer;">
+                                <a  class="btnAddtoCart" onclick="addtoCart()">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+                <div class="title"id="bestSeller">BEST SELLERS</div>
+                <div class="bestsellers ">
+                    
+                </div>
+                <div class="title" id="newArrivals">NEW ARRIVALS</div>
+                <div class="newarrivals">
+                    
+                </div>
+                <div class="banner2">
+                    <img src="./image/banner2.webp" alt="banner2">
+                </div>
+             </div>
+         </div> </div>
+                   <!-----------------------------end change------------------>
+       
+        <!-------------------------------------cart------------------->
+        <div class="products-container" id="showCart" style="display: none">
+            <div class="product-header">
+                <div class="product-title">PRODUCT</div>
+                <div class="price">PRICE</div>
+                <div class="quantity">QUANTITY</div>
+                <div class="total">TOTAL</div>
+            </div>
+            <div class="products">
+
+            </div>
+            <div class="checkout">
+                <button class="btn-checkout" id="checkout">Buy now</button>
+            </div>
+           
+        </div>
+        </div>
+        <!----------------------- phần content của trang sản phẩm----------->
+        <div class="main" id="main1" style="display: none;">
+            <div class="productDetail" id="product_detail">
+                <div class="row">
+                    <div class="col-2" id="image" class="image_product">
+                    </div>
+                    <div class="col-2">
+                        <div class="info">
+                            <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                            <div id="productInfo"></div>
+                            <b>Description: </b>
+                            <p class="Description"> 
+                                Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                            </p>
+                            <b>Size : </b>
+                            <div>
+                                <select id="size">
+                                    <option>XS</option>
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option selected>L</option>
+                                    <option>XL</option>
+                                    <option>XXL</option>
+                                </select>
+                            </div>
+                            <div class="addCart" style="cursor: pointer;">
+                                <a  class="btnAddtoCart"  onclick="addtoCart()" >Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+            <section class="cartegory">
+                <div class="banner">
+                    <img src="image/banner.png" alt="banner" class="banner">
+                    
+                </div>
+                <button  onclick="topFunction()" id="TopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
+
+                <div class="container">
+                   
+                        <div class="cartegoty-top row">
+                            <form class="filter">
+                                <div class="item " id="typeproduct">
+                                    <label for="">LSP</label>
+                                    <select name="cartegory">
+                                        
+                                        <option value="" style="background-color: #680000;color: #fff; ">All Product</option>
+                                        <option value="T-SHIRTS" style="background-color: #680000;color: #fff;">T-SHIRTS</option>
+                                        <option value="Pants" style="background-color: #680000;color: #fff;">PANTS</option>
+                                    </select>
+                                </div>
+                                <div class="item">
+                                    <label for="">Name</label>
+                                    <input type="text" name="name">
+                                </div>
+                               
+                                <div class="item minprice">
+                                    <label for="">Min Prices</label>
+                                    <input type="number" name="minPrice">
+                                </div>
+                                
+                                <div class="item">
+                                    <label for="">Max Prices</label>
+                                    <input type="number" name="maxPrice">
+                                </div>
+                                <div class="item submit">
+                                    <button>Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    
+                </div>
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="cartegory-right row" id="ctgrr">
+                            <div class="cartegory-right-content  row" id="ctgr-content">
+                              
+                            </div>
+                           
+                            <div class="text-xs-right">
+                                  <ul class="pagination"> 
+                                  </ul>     
+                        </div>
+                        </div>
+                    </div>
+                        </div>
+                        
+            </section>
+            </div>
+        <!-------------------footer---------->
+        <div class="main1">
+            <div class="footer" id="footeron" style="display: block;">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <p><b>CONTACT US</b></p>
+                        <p><b>Hotline:</b> 093-782-0371</p>
+                        <p><b>Email:</b> sportsparadise@gmail.com</p>
+                        <p><b>Address:</b> 273 Đ. An Dương Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh</p>
+                    </div>
+                    <div class="footer-right">
+                        <p><b>BRANCHES</b></p>
+                        <p><b>Branch 1:</b> 50 Thành Thái, quận 10, Thành phố Hồ Chí Minh</p>
+                        <p><b>Branch 2:</b> 23 Lê Đức Thọ, phường 17, quận Gò Vấp, thành phố Hồ Chí Minh</p>
+                        <p><b>Branch 3:</b> 273 Đ. An Dương Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh</p>
+                    </div>
+                </div>
+                    <br /><hr  class="hrfooter"/><br />
+                <div class="Copyrighted">© Copyright belongs to Group 6 Corp.</div>
+            </div>
+        </div>
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/sanpham.js"></script>
+    <script src="./javascript/search.js" defer></script>
+    <script src="./javascript/cart.js" defer></script>
+    <script type="module" src="./javascript/login.js" defer></script>
+    <script type="module" src="./javascript/user.js" defer ></script>
+    
+</body>
+</html>

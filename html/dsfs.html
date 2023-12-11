@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalStorage Example</title>
+</head>
+<body>
+
+  <!-- Input để chọn hình ảnh -->
+  <label for="imageInput">Chọn hình ảnh:</label>
+  <input type="file" id="imageInput" accept="image/*">
+
+  <!-- Button để lưu đường dẫn vào Local Storage -->
+  <button onclick="saveImage()">Lưu hình ảnh</button>
+
+  <!-- Hiển thị hình ảnh từ đường dẫn trong Local Storage -->
+  <img id="displayImage" src="" alt="Hình ảnh">
+
+  <script>
+    // Hàm để lưu đường dẫn vào Local Storage
+    function saveImage() {
+      // Lấy đối tượng file từ input
+      var fileInput = document.getElementById("imageInput");
+      var file = fileInput.files[0];
+
+      if (file) {
+        // Tạo URL đặc biệt cho file hình ảnh
+        var imageUrl = URL.createObjectURL(file);
+
+        // Lưu URL vào Local Storage
+        localStorage.setItem("storedImageUrl", imageUrl);
+
+        // Hiển thị hình ảnh từ URL trong Local Storage
+        displayImage();
+      } else {
+        alert("Vui lòng chọn một hình ảnh trước khi lưu.");
+      }
+    }
+
+    // Hàm để hiển thị hình ảnh từ đường dẫn trong Local Storage
+    function displayImage() {
+      // Lấy giá trị từ Local Storage
+      var storedImageUrl = localStorage.getItem("storedImageUrl");
+
+      // Hiển thị hình ảnh
+      var displayImage = document.getElementById("displayImage");
+      displayImage.src = storedImageUrl;
+    }
+
+    // Gọi hàm hiển thị khi trang web được tải
+    displayImage();
+  </script>
+</body>
+</html>
